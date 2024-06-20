@@ -4,7 +4,7 @@ import { addEntry, removeEntry, updateEntry } from "../store/reduces/List";
 
 export default function TodoList() {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.bookBorrowing);
+  const books = useSelector((state) => state.bookBorrowing) || []; // Add a fallback empty array
   const [filterStatus, setFilterStatus] = useState("");
   const [form, setForm] = useState({
     bookName: "",
